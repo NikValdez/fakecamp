@@ -9,6 +9,12 @@ class ProjectController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def chat
+    @project = Project.find(params[:id])
+    @messages = Message.where project_id: params[:id]
+    @message = Message.new
+  end
+
  def create
   @project = Project.new(project_params)
 

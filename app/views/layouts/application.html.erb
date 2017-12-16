@@ -11,5 +11,12 @@
   <body>
   	<%= render 'shared/navbar' %>
     <%= yield %>
+      <script>
+        <% if @project.id %>
+          window.projectId = "<%= @project.id %>";
+        <% else %>
+          window.projectId = null
+        <% end %>
+      </script>
   </body>
 </html>
